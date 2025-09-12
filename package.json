@@ -1,5 +1,5 @@
 {
-  "name": "blossom-ds",
+  "name": "@azzyew/blossom-ds",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -27,5 +27,25 @@
     "@types/react": "~19.1.0",
     "typescript": "~5.9.2"
   },
-  "private": true
+  "private": true,
+  "description": "A design system library for both React and React Native components.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Azzyew/blossom-ds.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "design-system",
+    "ui",
+    "components",
+    "cross-platform",
+    "react-native-web"
+  ],
+  "author": "Laisa Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Azzyew/blossom-ds/issues"
+  },
+  "homepage": "https://github.com/Azzyew/blossom-ds#readme"
 }

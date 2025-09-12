@@ -7,11 +7,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: 'bg-primary border border-primary-foreground',
-        secondary: 'bg-secondary border border-secondary-foreground',
-        outlined: 'bg-none border border-border',
+        solid: 'border-none',
+        outlined: 'bg-none border',
         ghost: 'bg-none border-none',
-        danger: 'bg-danger border border-danger-foreground'
+      },
+      action: {
+        primary: '',
+        secondary: '',
+        danger: ''
       },
       size: {
         sm: 'min-h-9 px-3 py-2',
@@ -19,8 +22,41 @@ const buttonVariants = cva(
         lg: 'min-h-13 px-5 py-4',
       },
     },
+    compoundVariants: [
+      {
+        variant: 'solid',
+        action: 'primary',
+        className: 'bg-primary',
+      },
+      {
+        variant: 'solid',
+        action: 'secondary',
+        className: 'bg-secondary',
+      },
+      {
+        variant: 'solid',
+        action: 'danger',
+        className: 'bg-danger',
+      },
+      {
+        variant: 'outlined',
+        action: 'primary',
+        className: 'border-primary-foreground',
+      },
+      {
+        variant: 'outlined',
+        action: 'secondary',
+        className: 'border-secondary-foreground',
+      },
+      {
+        variant: 'outlined',
+        action: 'danger',
+        className: 'border-danger-foreground',
+      },
+    ],
     defaultVariants: {
-      variant: 'primary',
+      variant: 'solid',
+      action: 'primary',
       size: 'md',
     },
   }
@@ -31,10 +67,13 @@ const buttonTextVariants = cva(
   {
     variants: {
       variant: {
+        solid: '',
+        outlined: '',
+        ghost: '',
+      },
+      action: {
         primary: 'text-primary-foreground',
         secondary: 'text-secondary-foreground',
-        outlined: 'text-foreground',
-        ghost: 'text-foreground',
         danger: 'text-danger-foreground'
       },
       size: {
@@ -44,7 +83,8 @@ const buttonTextVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'primary',
+      variant: 'solid',
+      action: 'primary',
       size: 'md',
     },
   }
@@ -61,13 +101,14 @@ const ButtonBase = ({
   className,
   variant,
   size,
+  action,
   loading = false,
   children,
   ...props
 }: ButtonBaseProps) => {
   return (
     <TouchableOpacity
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, className, action }), className)}
       {...props}
     >
       {loading ? <ActivityIndicator size="small" className='text-foreground' /> : children}
@@ -79,12 +120,13 @@ const ButtonText = ({
   className,
   variant,
   size,
+  action,
   children,
   ...props
 }: ButtonTextProps) => {
   return (
     <Text
-      className={cn(buttonTextVariants({ variant, size, className }))}
+      className={cn(buttonTextVariants({ variant, size, className, action }), className)}
       {...props}
     >
       {children}
