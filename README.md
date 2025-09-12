@@ -62,8 +62,8 @@ const EXTRA_SPACING = {
 After that, you only need to import the Blossom object and you already have access to all Blossom DS components!!
 
 ```jsx
-<Blossom.Button.Base variant='secondary' size='sm' loading={loading}>
-    <Blossom.Button.Text variant='secondary' size='sm'>
+<Blossom.Button.Base variant='solid' action='secondary' size='sm' loading={loading}>
+    <Blossom.Button.Text variant='solid' action='secondary' size='sm'>
         Some Text Here
     </Blossom.Button.Text>
 </Blossom.Button.Base>
