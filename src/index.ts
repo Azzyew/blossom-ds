@@ -16,7 +16,7 @@ export const COLORS = {
   'danger-foreground': '#B80000',
   'success': '#99CC99',
   'success-foreground': '#007300',
-};
+}
 
 export const EXTRA_FONT_SIZES = {
   '2xs': 10,

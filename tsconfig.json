@@ -1,11 +1,22 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
     "noEmit": false,
     "outDir": "./dist",
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
-  }
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "es2020",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "lib": ["es2020", "dom"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["dist", "node_modules", "App.tsx", "index.ts", "*.config.js"]
 }

@@ -1,14 +1,18 @@
 {
   "name": "@azzyew/blossom-ds",
-  "version": "1.0.0",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
-  "type": "module",
+  "version": "1.0.5",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build": "babel src --out-dir dist --extensions .ts,.tsx --copy-files",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
+    "build:all": "npm run build && npm run build:types",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -26,7 +30,13 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
     "@types/react": "~19.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
     "typescript": "~5.9.2"
   },
   "description": "A design system library for both React and React Native components.",

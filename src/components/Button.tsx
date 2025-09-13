@@ -108,7 +108,7 @@ const ButtonBase = ({
 }: ButtonBaseProps) => {
   return (
     <TouchableOpacity
-      className={cn(buttonVariants({ variant, size, className, action }), className)}
+      className={cn(buttonVariants({ variant, size, action }), className)}
       {...props}
     >
       {loading ? <ActivityIndicator size="small" className='text-foreground' /> : children}
@@ -126,7 +126,7 @@ const ButtonText = ({
 }: ButtonTextProps) => {
   return (
     <Text
-      className={cn(buttonTextVariants({ variant, size, className, action }), className)}
+      className={cn(buttonTextVariants({ variant, size, action }), className)}
       {...props}
     >
       {children}
