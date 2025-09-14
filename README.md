@@ -10,7 +10,7 @@ Make sure to install the package and add the necessary constants to your project
 
 ```js
 /** @type {import('tailwindcss').Config} */
-import { COLORS, EXTRA_FONT_SIZES, EXTRA_SPACING } from 'blossom-ds';
+const { COLORS, EXTRA_FONT_SIZES, EXTRA_SPACING } = require('@azzyew/blossom-ds/src/tokens.json');
 
 module.exports = {
   content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
